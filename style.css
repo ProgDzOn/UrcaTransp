@@ -1,0 +1,113 @@
+/* style.css */
+
+/* إعدادات الأساس */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+/* تنظيم الفيديوهات بشكل أفقي باستخدام Flexbox */
+.video-container {
+    display: flex;
+    justify-content: space-between; /* توزيع الفيديوهات بالتساوي */
+    flex-wrap: wrap; /* السماح بالتفاف الفيديوهات في حالة كان العرض صغير */
+    padding: 20px;
+}
+
+.video {
+    width: 32%; /* تخصيص كل فيديو ليأخذ 32% من العرض الكلي */
+    margin-bottom: 20px;
+}
+
+video {
+    width: 100%; /* تأكد من أن الفيديو يمتد عبر العنصر بالكامل */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* قاعدة للتصميم المتجاوب على الأجهزة الصغيرة (الهواتف المحمولة) */
+@media only screen and (max-width: 600px) {
+    .video-container {
+        display: block; /* جعل الفيديوهات تحت بعضها البعض عند الشاشات الصغيرة */
+        padding: 10px;
+    }
+
+    .video {
+        width: 100%; /* تخصيص كل فيديو ليأخذ العرض الكامل على الأجهزة الصغيرة */
+        margin-bottom: 15px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    header {
+        padding: 10px;
+    }
+}
+
+/* قاعدة للأجهزة اللوحية (الشاشات المتوسطة) */
+@media only screen and (max-width: 768px) {
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .video {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* تحسين العرض على الشاشات الكبيرة (أجهزة الكمبيوتر المكتبية) */
+@media only screen and (min-width: 769px) {
+    .video-container {
+        display: flex;
+        justify-content: space-between; /* توزيع الفيديوهات بشكل أفقي */
+    }
+
+    .video {
+        width: 32%; /* تخصيص عرض الفيديو عند الشاشات الكبيرة */
+    }
+}
+
+/* التصميم للهوامش السفلية */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
